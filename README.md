@@ -94,11 +94,15 @@ cat /etc/selinux/targeted/contexts/files/file_contexts.local
 
 /var/lib/pgadmin(/.*)?    system_u:object_r:httpd_var_lib_t:s0
 /var/log/pgadmin(/.*)?    system_u:object_r:httpd_log_t:s0
+
+### for rpm pg installation
 /mnt/data/postgres13/data(/.*)?    system_u:object_r:postgresql_db_t:s0
 /mnt/data/postgres13/data/log(/.*)?    system_u:object_r:postgresql_log_t:s0
 /mnt/data/postgres13/data/*\.log    system_u:object_r:postgresql_log_t:s0
 /mnt/data/postgres13/*\.log    system_u:object_r:postgresql_log_t:s0
 /mnt/data/postgres13/pgstartup.log    system_u:object_r:postgresql_log_t:s0
+
+## for tomcat installation by hand
 /opt/apache-tomcat-10.0.6(/.*)?    system_u:object_r:tomcat_var_lib_t:s0
 /opt/apache-tomcat-10.0.6/temp/.*\.pid    system_u:object_r:tomcat_var_run_t:s0
 /opt/apache-tomcat-10.0.6/.*\.pid    system_u:object_r:tomcat_var_run_t:s0

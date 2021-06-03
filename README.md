@@ -196,3 +196,12 @@ sudo vi /usr/share/tomcat/conf/tomcat-users.xml
          allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
 -->
 ```
+
+### change server limits 
+```
+cat /etc/systemd/system/mariadb.service.d/limits.conf 
+[Service]
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+```
